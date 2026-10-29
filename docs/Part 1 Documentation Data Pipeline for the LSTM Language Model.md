@@ -131,7 +131,7 @@ A perplexity value means little on its own, so two trivial reference "models" ar
 
 An LSTM that does not clearly beat the unigram reference has learned nothing useful from the context. These references appear next to every results table.
 
-## 9. Results of this stage (fill in from your own run)
+## 9. Results of this stage (to be filled in)
 
 Nothing in this table has been measured on real data yet. Copy the values printed by the notebook.
 
@@ -176,21 +176,7 @@ All values live in `CFG` in `common.py`. The values below are starting points ch
 
 Set `DEBUG = True` in the notebook for a 50-article run while testing code.
 
-## 13. Likely oral-exam questions on this part
 
-**Why split by article instead of randomly by window?** Neighbouring windows share most of their words. A random window split would put near-copies of training text into the test set and inflate the score.
-
-**Why build the vocabulary from the training set only?** Using test words would leak information about the test data. Words never seen in training are mapped to `<UNK>`, which is exactly what would happen on genuinely new text.
-
-**Why a minimum frequency?** It limits the vocabulary size (important for one-hot input and the output layer) and it gives `<UNK>` real training examples.
-
-**What are the input and the target?** The input is 20 consecutive words and the target is the next word. The target sequence is the input shifted by one position, and the target is never part of the input.
-
-**Why do we compute a unigram perplexity?** It is a context-free reference. A model must beat it to show that the context helps.
-
-**What does the uniform perplexity tell you?** It equals the vocabulary size, the score of random guessing. A model worse than this has a problem, for example heavy overfitting.
-
-**Why two seeds?** The data seed fixes the data for all experiments so comparisons are fair. The training seed changes initialisation and batch order so that variability between runs can be measured.
 
 ## References
 

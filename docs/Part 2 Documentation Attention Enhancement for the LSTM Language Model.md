@@ -199,7 +199,7 @@ The following checks were run on **synthetic text** (random words), not on real 
 
 These checks are also built into the notebook (shapes, weight sums, no-future-leak test and the memorise-32-examples test), so they run on your real data too.
 
-## 10. Results (fill in from your own run)
+## 10. Results (to be filled in )
 
 Nothing in these tables has been measured on real data. Copy the values from the notebook output.
 

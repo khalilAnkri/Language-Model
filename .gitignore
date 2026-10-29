@@ -1,0 +1,10 @@
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+*.pt
+
+# data: ignore everything except the shared article subset
+data/*
+!data/articles.json.gz
+
+RTX-env/*
